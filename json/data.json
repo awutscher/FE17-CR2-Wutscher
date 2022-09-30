@@ -1,0 +1,42 @@
+var tasks = `[{
+    "taskName": "Shopping",
+    "image":"placeholder.jpg",
+    "description":"Shop for food at Billa",
+    "deadline": "date",
+    "importance": 0
+},{
+    "taskName":"Walk the Dog",
+    "image": "placeholder.jpg",
+    "description": "walk the dog in the park",
+    "importance": 0
+},{
+    "taskName":"Walk the Dog",
+    "image": "placeholder.jpg",
+    "description": "walk the dog in the park",
+    "importance": 0
+},{
+    "taskName":"Walk the Dog",
+    "image": "placeholder.jpg",
+    "description": "walk the dog in the park",
+    "importance": 0
+},{
+    "taskName":"Walk the Dog",
+    "image": "placeholder.jpg",
+    "description": "walk the dog in the park",
+    "importance": 0
+},{
+    "taskName":"Walk the Dog",
+    "image": "placeholder.jpg",
+    "description": "walk the dog in the park",
+    "importance": 0
+},{
+    "taskName":"Walk the Dog",
+    "image": "placeholder.jpg",
+    "description": "walk the dog in the park",
+    "importance": 0
+},{
+    "taskName":"Walk the Dog",
+    "image": "placeholder.jpg",
+    "description": "walk the dog in the park",
+    "importance": 0
+}]`;

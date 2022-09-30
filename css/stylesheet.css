@@ -1,0 +1,38 @@
+.bgImage {
+  background-image: url("../images/bottles.jpg");
+  background-color: rgb(228, 228, 168);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.bgheadertext {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+}
+
+#content {
+  gap: 30px 30px;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 992px) {
+  .card {
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .card {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .card {
+    width: 80%;
+  }
+}/*# sourceMappingURL=stylesheet.css.map */
