@@ -4,7 +4,7 @@ console.log(tasks)
 function startup(){
 for(let task of tasks){
     document.getElementById("content").innerHTML += `
-    <div class="card text-center shadow">
+    <div id="${task.taskName}" class="card text-center shadow">
             <img src="${task.image}" class="image card-img-top img-thumbnail" alt="taskimage">
             <div class="card-body">
               <h5 class="card-title">${task.taskName}</h5>
@@ -74,7 +74,7 @@ function importancedecrease(i){
     else{}
     document.getElementsByClassName("importance")[i].innerHTML = tasks[i].importance;
     var number = document.getElementsByClassName("importance")
-    if(tasks[i].importance > 3){/* Change Color based on i */
+    if(tasks[i].importance > 3){
         number[i].classList.add("bg-danger")
         number[i].classList.remove("bg-warning")
         number[i].classList.remove("bg-success")
@@ -99,7 +99,9 @@ function adddecreasebutton(){
             importancedecrease(i);
         })
 }};
-adddecreasebutton();
+adddecreasebutton(); 
+
+
 /* Task Done */
 
 var done = document.getElementsByClassName("done");
@@ -107,7 +109,7 @@ var done = document.getElementsByClassName("done");
 function adddonebutton(){
     for(let i=0; i<done.length; i++){
         done[i].addEventListener("click", function(){
-            taskdone(i);
+            taskdone(tasks[i].taskName);
         })
     }
 }
@@ -115,7 +117,7 @@ adddonebutton();
 
 
 function taskdone(i){
-    document.getElementsByClassName("card")[i].classList.add("border","border-success", "border-2");
+    document.getElementById(i).classList.add("border","border-success", "border-2");
 }
 
 /* remove this one */
@@ -123,27 +125,26 @@ function taskdone(i){
 var removeItem = document.getElementsByClassName("remove");
 
 function addremovebutton(){
-for(let i=0; i<done.length; i++){
-    removeItem[i].addEventListener("click", function(){
-        removeThisItem(i);
+    for(let i=0; i<removeItem.length; i++){
+        removeItem[i].addEventListener("click", function(){
+        removeThisItem(tasks[i].taskName);
     })
 }};
 addremovebutton();
 
 function removeThisItem(i){
-    document.getElementsByClassName("card")[i].remove();
+    document.getElementById(i).remove();
 }
 
 /* Sort Functionality */
 
 var sortbtn = document.getElementById("sort");
 sortbtn.addEventListener("click", function(){
-/* fired von selbst ?!?!!? */
     tasks.sort((a,b)=>a.importance - b.importance);
     document.getElementById("content").innerHTML = "";
     for(let task of tasks){
         document.getElementById("content").innerHTML += `
-        <div class="card text-center shadow">
+        <div id="${task.taskName}" class="card text-center shadow">
                 <img src="${task.image}" class="image card-img-top img-thumbnail" alt="taskimage">
                 <div class="card-body">
                   <h5 class="card-title">${task.taskName}</h5>
@@ -179,12 +180,13 @@ function colorCheck(){
     var valueArray = document.getElementsByClassName("importance");
         for(let i = 0; i<valueArray.length; i++){
             var value = document.getElementsByClassName("importance")[i];
-        if(value > 3){
+            console.log(value)
+        if(Number(value.innerHTML) > 3){
             value.classList.add("bg-danger")
             value.classList.remove("bg-warning")
             value.classList.remove("bg-success")
         }
-        else if(value > 1){
+        else if(Number(value.innerHTML) > 1){
             value.classList.add("bg-warning")
             value.classList.remove("bg-danger")
             value.classList.remove("bg-success")
@@ -195,24 +197,3 @@ function colorCheck(){
             value.classList.remove("bg-warning")
         }
 }};
-
-
-/* for(let task of tasks){
-    var value = document.getElementsByClassName("importance");
-        if(value > 3){
-            value.classList.add("bg-danger")
-            value.classList.remove("bg-warning")
-            value.classList.remove("bg-success")
-        }
-        else if(value > 1){
-            value.classList.add("bg-warning")
-            value.classList.remove("bg-danger")
-            value.classList.remove("bg-success")
-        }
-        else{
-            value.classList.add("bg-success")
-            value.classList.remove("bg-danger")
-            value.classList.remove("bg-warning")
-        }
-    }
-   */
