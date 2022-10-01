@@ -39,7 +39,7 @@ function importanceincrease(i){
     else{}
     document.getElementsByClassName("importance")[i].innerHTML = tasks[i].importance;
     var number = document.getElementsByClassName("importance")
-    if(tasks[i].importance > 3){/* Change Color based on i */
+    if(tasks[i].importance > 3){/* Change Color */
         number[i].classList.add("bg-danger")
         number[i].classList.remove("bg-warning")
         number[i].classList.remove("bg-success")
@@ -171,4 +171,48 @@ sortbtn.addEventListener("click", function(){
         adddecreasebutton();
         addincreasebutton();
     };
+    colorCheck();
 });
+
+ /* color check */
+function colorCheck(){
+    var valueArray = document.getElementsByClassName("importance");
+        for(let i = 0; i<valueArray.length; i++){
+            var value = document.getElementsByClassName("importance")[i];
+        if(value > 3){
+            value.classList.add("bg-danger")
+            value.classList.remove("bg-warning")
+            value.classList.remove("bg-success")
+        }
+        else if(value > 1){
+            value.classList.add("bg-warning")
+            value.classList.remove("bg-danger")
+            value.classList.remove("bg-success")
+        }
+        else{
+            value.classList.add("bg-success")
+            value.classList.remove("bg-danger")
+            value.classList.remove("bg-warning")
+        }
+}};
+
+
+/* for(let task of tasks){
+    var value = document.getElementsByClassName("importance");
+        if(value > 3){
+            value.classList.add("bg-danger")
+            value.classList.remove("bg-warning")
+            value.classList.remove("bg-success")
+        }
+        else if(value > 1){
+            value.classList.add("bg-warning")
+            value.classList.remove("bg-danger")
+            value.classList.remove("bg-success")
+        }
+        else{
+            value.classList.add("bg-success")
+            value.classList.remove("bg-danger")
+            value.classList.remove("bg-warning")
+        }
+    }
+   */
