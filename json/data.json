@@ -1,42 +1,27 @@
 var tasks = `[{
     "taskName": "Shopping",
-    "image":"placeholder.jpg",
+    "image":"images/grocery.jpg",
     "description":"Shop for food at Billa",
     "deadline": "date",
     "importance": 0
 },{
     "taskName":"Walk the Dog",
-    "image": "placeholder.jpg",
+    "image": "images/dog.jpg",
     "description": "walk the dog in the park",
     "importance": 0
 },{
-    "taskName":"Walk the Dog",
-    "image": "placeholder.jpg",
-    "description": "walk the dog in the park",
+    "taskName":"Feed the Cat",
+    "image": "images/cat.jpg",
+    "description": "-//-",
     "importance": 0
 },{
-    "taskName":"Walk the Dog",
-    "image": "placeholder.jpg",
-    "description": "walk the dog in the park",
+    "taskName":"Water Plants",
+    "image": "images/plant.jpg",
+    "description": "Be carefull with the Orchid",
     "importance": 0
 },{
-    "taskName":"Walk the Dog",
-    "image": "placeholder.jpg",
-    "description": "walk the dog in the park",
-    "importance": 0
-},{
-    "taskName":"Walk the Dog",
-    "image": "placeholder.jpg",
-    "description": "walk the dog in the park",
-    "importance": 0
-},{
-    "taskName":"Walk the Dog",
-    "image": "placeholder.jpg",
-    "description": "walk the dog in the park",
-    "importance": 0
-},{
-    "taskName":"Walk the Dog",
-    "image": "placeholder.jpg",
-    "description": "walk the dog in the park",
+    "taskName":"Take a Bath",
+    "image": "images/bath.jpg",
+    "description": "Relax a bit",
     "importance": 0
 }]`;

@@ -1,10 +1,11 @@
 tasks = JSON.parse(tasks)
 console.log(tasks)
 
+function startup(){
 for(let task of tasks){
     document.getElementById("content").innerHTML += `
     <div class="card text-center shadow">
-            <img src="https://via.placeholder.com/150" class="card-img-top img-thumbnail" alt="taskimage">
+            <img src="${task.image}" class="image card-img-top img-thumbnail" alt="taskimage">
             <div class="card-body">
               <h5 class="card-title">${task.taskName}</h5>
               <p class="card-text text">${task.description}</p>
@@ -26,7 +27,9 @@ for(let task of tasks){
             </div>
           </div>
     `
-}
+}};
+startup();
+
 
 /* Increase Importance */
 function importanceincrease(i){
@@ -55,11 +58,13 @@ function importanceincrease(i){
 
 var increasebutton = document.getElementsByClassName("importanceincrease");
 
+function addincreasebutton(){
 for(let i=0; i<increasebutton.length; i++){
     increasebutton[i].addEventListener("click", function(){
         importanceincrease(i);
     })
-}
+}};
+addincreasebutton();
 
 /* Decrease Importance */
 function importancedecrease(i){
@@ -88,21 +93,26 @@ function importancedecrease(i){
 
 var decreasebutton = document.getElementsByClassName("importancedecrease");
 
-for(let i=0; i<increasebutton.length; i++){
-    decreasebutton[i].addEventListener("click", function(){
-        importancedecrease(i);
-    })
-}
-
+function adddecreasebutton(){
+    for(let i=0; i<increasebutton.length; i++){
+        decreasebutton[i].addEventListener("click", function(){
+            importancedecrease(i);
+        })
+}};
+adddecreasebutton();
 /* Task Done */
 
 var done = document.getElementsByClassName("done");
 
-for(let i=0; i<done.length; i++){
-    done[i].addEventListener("click", function(){
-        taskdone(i);
-    })
+function adddonebutton(){
+    for(let i=0; i<done.length; i++){
+        done[i].addEventListener("click", function(){
+            taskdone(i);
+        })
+    }
 }
+adddonebutton();
+
 
 function taskdone(i){
     document.getElementsByClassName("card")[i].classList.add("border","border-success", "border-2");
@@ -112,11 +122,13 @@ function taskdone(i){
 
 var removeItem = document.getElementsByClassName("remove");
 
+function addremovebutton(){
 for(let i=0; i<done.length; i++){
     removeItem[i].addEventListener("click", function(){
         removeThisItem(i);
     })
-}
+}};
+addremovebutton();
 
 function removeThisItem(i){
     document.getElementsByClassName("card")[i].remove();
@@ -125,15 +137,14 @@ function removeThisItem(i){
 /* Sort Functionality */
 
 var sortbtn = document.getElementById("sort");
-sortbtn.addEventListener("click", sortByImportance());
-/* fired von selbst ?!?!!?}
-/* function sortByImportance(){
+sortbtn.addEventListener("click", function(){
+/* fired von selbst ?!?!!? */
     tasks.sort((a,b)=>a.importance - b.importance);
     document.getElementById("content").innerHTML = "";
     for(let task of tasks){
         document.getElementById("content").innerHTML += `
         <div class="card text-center shadow">
-                <img src="https://via.placeholder.com/150" class="card-img-top img-thumbnail" alt="taskimage">
+                <img src="${task.image}" class="image card-img-top img-thumbnail" alt="taskimage">
                 <div class="card-body">
                   <h5 class="card-title">${task.taskName}</h5>
                   <p class="card-text text">${task.description}</p>
@@ -155,5 +166,9 @@ sortbtn.addEventListener("click", sortByImportance());
                 </div>
               </div>
         `
+        addremovebutton();
+        adddonebutton();
+        adddecreasebutton();
+        addincreasebutton();
     };
-} */
+});
